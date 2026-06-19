@@ -1,25 +1,34 @@
 # MetroScan
 
-MetroScan is a tool I built for B2B sales teams in the construction-staffing space. It reads
-public information about contractors across a given metro and works out which ones look like
-they are hiring or ramping up right now, then ranks them so reps know who to call first.
+MetroScan came out of watching someone close to me grind through B2B sales. A big chunk of the
+day goes to just figuring out who is even worth calling. I wanted to build the thing that does
+that part for them.
 
-The idea is to spend less time guessing and more time on the accounts that are actually in the
-market.
+So MetroScan reads public information about contractors across a metro and works out which ones
+look like they are hiring or ramping up right now, then ranks them. The rep starts the day on the
+best accounts instead of guessing. I built it because I wanted to, and because it actually helps a
+real person do their job.
 
-## What it does
+## How it's put together
 
-- Pulls together public signals about contractors across a metro area
-- Scores and ranks them by how likely they are to need staffing now
-- Outputs a clean, ready-to-use list for the sales team
+High level only. The sources and the scoring approach are private.
+
+```
+metroscan/
+├── sources/     gather public signals about contractors in a metro
+├── enrich/      summarize and read with an LLM
+├── score/       rank firms by how likely they are hiring now
+└── deck/        build the ranked report for the sales team
+```
 
 ## Tech
 
-Python, public data sources, an LLM for reading and summarizing, automated report output.
+Python, public data sources, a large-language model for reading and summarizing, automated report
+output.
 
 ## Status
 
-A real, working product I built and put in front of a sales team. The code and the scoring
-approach are private; this repo is a short overview.
+A real, working product I built and put in front of a sales team. The code and the scoring are
+private; this is an overview.
 
 Built by Tracecast LLC.
