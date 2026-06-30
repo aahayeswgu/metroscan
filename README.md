@@ -9,6 +9,8 @@ look like they are hiring or ramping up right now, then ranks them. The rep star
 best accounts instead of guessing. I built it because I wanted to, and because it actually helps a
 real person do their job.
 
+![MetroScan - ranked leads (illustrative, fictional data)](docs/metroscan-sample.svg)
+
 ## How it's put together
 
 High level only. The sources and the scoring approach are private.
