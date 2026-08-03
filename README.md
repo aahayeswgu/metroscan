@@ -9,7 +9,7 @@ MetroScan reads public information about contractors across a metro, works out w
 like they are hiring or ramping up right now, and ranks them into a shortlist with the evidence
 attached. The rep starts the day on the best accounts instead of guessing.
 
-![MetroScan - ranked leads (illustrative, fictional data)](docs/metroscan.png)
+![MetroScan ranked leads (illustrative, fictional data)](docs/metroscan.png)
 
 ## What a run looks like
 
@@ -23,22 +23,19 @@ moves through five stages:
 3. **Enrich.** A large-language model reads the crawled material and condenses each company into
    a consistent profile, so hundreds of messy websites become comparable records.
 4. **Verify.** Confirm contact details before anything ships in a deck.
-5. **Score.** Rank every firm by how likely it is to be hiring or expanding right now. The model
-   has to show its work: every score carries the evidence behind it, so a rep can read exactly
-   why a lead sits where it does.
+5. **Score.** Rank every firm by how likely it is to be hiring or expanding right now. Every score carries the evidence behind it, so a rep can read
+   exactly why a lead sits where it does.
 
-The specific sources and the scoring approach are private. The shape of the pipeline is not.
+The specific sources and the scoring approach are private.
 
 ## What comes out
 
 A deck: a ranked shortlist of companies, each with a profile, the buying signals found, verified
-contact information, and the evidence for the ranking. Built to be read in five minutes before
-the first call, not studied for an afternoon.
+contact information, and the evidence for the ranking. Built to be read in five minutes before the first call.
 
 ## Where it has run
 
-Decks delivered across 10+ metro markets, feeding real outreach for a working sales team. The
-output does not sit in a folder; it gets called on.
+Decks delivered across 10+ metro markets, feeding real outreach for a working sales team.
 
 ## Tech
 
