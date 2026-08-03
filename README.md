@@ -1,40 +1,52 @@
 # MetroScan
 
 MetroScan came out of watching someone close to me grind through B2B sales. A big chunk of the
-day goes to just figuring out who is even worth calling. I wanted to build the thing that does
-that part for them.
+day goes to just figuring out who is even worth calling. A rep gets handed a territory and a
+quota, and the first hour of every morning disappears into browser tabs: maps, review sites, job
+boards, a half-updated spreadsheet. I wanted to build the thing that does that part for them.
 
-So MetroScan reads public information about contractors across a metro and works out which ones
-look like they are hiring or ramping up right now, then ranks them. The rep starts the day on the
-best accounts instead of guessing. I built it because I wanted to, and because it actually helps a
-real person do their job.
+MetroScan reads public information about contractors across a metro, works out which ones look
+like they are hiring or ramping up right now, and ranks them into a shortlist with the evidence
+attached. The rep starts the day on the best accounts instead of guessing.
 
 ![MetroScan - ranked leads (illustrative, fictional data)](docs/metroscan.png)
 
-## How it's put together
+## What a run looks like
 
-High level only. The sources and the scoring approach are private.
+A run takes a metro and a market segment and produces a ranked lead deck. Under the hood it
+moves through five stages:
 
-```
-metroscan/
-├── sources/     gather public signals about contractors in a metro
-├── enrich/      summarize and read with an LLM
-├── score/       rank firms by how likely they are hiring now
-└── deck/        build the ranked report for the sales team
-```
+1. **Search.** Enumerate the businesses that actually operate in the segment across the metro,
+   drawn from public listings and directories.
+2. **Crawl.** Visit each company's public web presence and pull the text that matters: what they
+   do, where they work, whether they are advertising for help.
+3. **Enrich.** A large-language model reads the crawled material and condenses each company into
+   a consistent profile, so hundreds of messy websites become comparable records.
+4. **Verify.** Confirm contact details before anything ships in a deck.
+5. **Score.** Rank every firm by how likely it is to be hiring or expanding right now. The model
+   has to show its work: every score carries the evidence behind it, so a rep can read exactly
+   why a lead sits where it does.
+
+The specific sources and the scoring approach are private. The shape of the pipeline is not.
+
+## What comes out
+
+A deck: a ranked shortlist of companies, each with a profile, the buying signals found, verified
+contact information, and the evidence for the ranking. Built to be read in five minutes before
+the first call, not studied for an afternoon.
+
+## Where it has run
+
+Decks delivered across 10+ metro markets, feeding real outreach for a working sales team. The
+output does not sit in a folder; it gets called on.
 
 ## Tech
 
-Python, public data sources, a large-language model for reading and summarizing, automated report
-output.
+Python end to end. Public data sources, a large-language model for reading, summarizing, and
+scoring, and automated report generation.
 
 ## Status
 
-A real, working product I built and put in front of a sales team. The code and the scoring are
-private; this is an overview.
+A real, working product. The code and the scoring are private; this repo is the overview.
 
 Built by Tracecast LLC.
-
----
-
-![Tracecast LLC - custom signal engines for B2B](docs/tracecast-logo.png)
