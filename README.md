@@ -13,6 +13,8 @@ attached. The rep starts the day on the best accounts instead of guessing.
 
 ## What a run looks like
 
+![How a MetroScan run works, from search to a finished deck](docs/pipeline.png)
+
 A run takes a metro and a market segment and produces a ranked lead deck. Under the hood it
 moves through five stages:
 
